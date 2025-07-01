@@ -8,7 +8,6 @@ import Footer from '@/components/layout/footer';
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  preload: true,
   fallback: ['system-ui', 'sans-serif'],
 });
 
