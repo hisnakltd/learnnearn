@@ -49,7 +49,7 @@ export default function StorePage() {
               <div className="flex justify-center mb-8">
                 <div className="relative w-80 h-96 md:w-96 md:h-[480px] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/Amazon Course.png"
+                    src="/amazon-course.png"
                     alt="How to Use AI to Create Short Books and Publish on Amazon KDP and Kobo"
                     fill
                     className="object-cover"
