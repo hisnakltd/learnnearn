@@ -23,7 +23,7 @@ export async function middleware(req: NextRequest) {
   }
 
   // Auth routes - redirect to home if already authenticated
-  const authPaths = ['/sign-in', '/sign-up'];
+  const authPaths = ['/sign-in', '/register'];
   const isAuthPath = authPaths.some(path => 
     req.nextUrl.pathname.startsWith(path)
   );
