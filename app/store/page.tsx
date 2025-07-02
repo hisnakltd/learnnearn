@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { ShoppingBag, CheckCircle, Smartphone, DollarSign, Clock, Users, Star, ArrowRight, Download, CreditCard, MessageCircle, Mail, Phone } from 'lucide-react';
+import { ShoppingBag, CheckCircle, Smartphone, DollarSign, Clock, Users, Star, ArrowRight, Download, CreditCard, MessageCircle, Mail, Phone, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -240,6 +240,40 @@ export default function StorePage() {
               </p>
               <p className="text-lg text-gray-600">
                 All you need is your smartphone or tablet and a willingness to take action.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guarantee Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-green-600 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <Shield className="h-12 w-12 text-yellow-400" />
+              <h2 className="text-4xl font-bold">30-Day Money-Back Guarantee</h2>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur p-8 rounded-2xl mb-8">
+              <p className="text-xl leading-relaxed mb-6">
+                If you enroll in our Amazon KDP course today and complete the training, and it does not deliver the value, clarity, and results we've outlined — we will give you a full refund. No stress. No questions asked. No guilt-tripping.
+              </p>
+              
+              <p className="text-lg leading-relaxed mb-6">
+                We're not here to take your money and vanish. Hisnak Ltd is a legally registered company in Nigeria, and we stand by our word, our platform, and the integrity of this program.
+              </p>
+              
+              <p className="text-lg leading-relaxed mb-6">
+                We didn't create this course just to sell — we created it to transform. You deserve results. You deserve clarity. And you deserve a platform that works.
+              </p>
+              
+              <p className="text-lg leading-relaxed mb-6">
+                Try the program. Go through the training. Apply the lessons. And if within 30 days you truly feel like this course didn't give you what we promised, we'll honor your refund request — respectfully and professionally.
+              </p>
+              
+              <p className="text-xl font-bold text-yellow-300">
+                So don't let doubt hold you back. Take the leap. Secure your access now.
               </p>
             </div>
           </div>
