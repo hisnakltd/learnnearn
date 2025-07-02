@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -8,9 +7,6 @@ const nextConfig = {
     unoptimized: true,
     domains: ['i.imgur.com']
   },
-  optimizeFonts: false,
-  trailingSlash: true,
-  distDir: 'out',
   experimental: {
     esmExternals: false,
   },
