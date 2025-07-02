@@ -10,6 +10,7 @@ const nextConfig = {
   experimental: {
     esmExternals: false,
   },
+  optimizeFonts: false,
 };
 
 module.exports = nextConfig;
