@@ -1,8 +1,6 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "out",
-  "trailingSlash": false,
-  "cleanUrls": true,
+  "buildCommand": "NEXT_FONT_GOOGLE_OPTIMIZED=false npm run build",
+  "framework": "nextjs",
   "headers": [
     {
       "source": "/(.*)",
@@ -20,12 +18,6 @@
           "value": "1; mode=block"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
     }
   ]
 }

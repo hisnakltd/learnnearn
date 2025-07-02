@@ -11,6 +11,8 @@ const nextConfig = {
     esmExternals: false,
   },
   optimizeFonts: false,
+  // Remove static export for proper deployment
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
