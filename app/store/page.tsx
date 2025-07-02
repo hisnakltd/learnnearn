@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { ShoppingBag, CheckCircle, Smartphone, DollarSign, Clock, Users, Star, ArrowRight, Download, CreditCard, MessageCircle, Mail, Phone, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -44,6 +45,19 @@ export default function StorePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
+              {/* Course Image */}
+              <div className="flex justify-center mb-8">
+                <div className="relative w-80 h-96 md:w-96 md:h-[480px] rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/Amazon Course.png"
+                    alt="How to Use AI to Create Short Books and Publish on Amazon KDP and Kobo"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              
               <h2 className="text-4xl font-bold mb-6 text-gray-800">
                 Permit Me To Introduce:
               </h2>
