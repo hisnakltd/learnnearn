@@ -65,7 +65,7 @@ export default function Header() {
                     <Link href="/sign-in">Sign In</Link>
                   </Button>
                   <Button asChild>
-                    <Link href="/sign-up">Sign Up</Link>
+                    <Link href="/register">Register</Link>
                   </Button>
                 </>
               )}

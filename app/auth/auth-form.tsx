@@ -25,7 +25,7 @@ const formSchema = z.object({
 });
 
 interface AuthFormProps {
-  mode: 'sign-in' | 'sign-up';
+  mode: 'sign-in' | 'register';
 }
 
 export default function AuthForm({ mode }: AuthFormProps) {
@@ -43,7 +43,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     try {
-      if (mode === 'sign-up') {
+      if (mode === 'register') {
         const { error } = await supabase.auth.signUp({
           email: values.email,
           password: values.password,
@@ -106,7 +106,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
           ) : mode === 'sign-in' ? (
             'Sign In'
           ) : (
-            'Sign Up'
+            'Register'
           )}
         </Button>
       </form>
