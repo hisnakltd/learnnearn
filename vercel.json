@@ -1,5 +1,5 @@
 {
-  "buildCommand": "NEXT_FONT_GOOGLE_OPTIMIZED=false npm run build",
+  "buildCommand": "NODE_OPTIONS=\"--http-timeout=60000\" NEXT_FONT_GOOGLE_OPTIMIZED=false npm run build",
   "framework": "nextjs",
   "headers": [
     {

@@ -6,7 +6,7 @@ frontend:
         - npm ci
     build:
       commands:
-        - NEXT_FONT_GOOGLE_OPTIMIZED=false npm run build
+        - NODE_OPTIONS="--http-timeout=60000" NEXT_FONT_GOOGLE_OPTIMIZED=false npm run build
   artifacts:
     baseDirectory: .next
     files:
