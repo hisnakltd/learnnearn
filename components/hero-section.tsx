@@ -23,7 +23,7 @@ export default function HeroSection() {
               <Link href="/about">Learn More</Link>
             </Button>
             <Button variant="secondary" size="lg" className="bg-green-600 hover:bg-green-700 text-white" asChild>
-              <Link href="https://hisnakprogram.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://program.hisnak.com/" target="_blank" rel="noopener noreferrer">
                 Hisnak Program
               </Link>
             </Button>
