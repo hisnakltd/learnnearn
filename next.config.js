@@ -9,27 +9,17 @@ const nextConfig = {
   },
   experimental: {
     esmExternals: false,
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } },
-    ],
   },
-  optimizeFonts: false,
-  // Remove static export for proper deployment
+  // Enable static export for cPanel deployment
+  output: 'export',
   trailingSlash: true,
-  // Disable font optimization to prevent timeout errors
+  // Disable features that don't work with static export
   swcMinify: false,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Add timeout configuration
-  serverRuntimeConfig: {
-    // Will only be available on the server side
-    mySecret: 'secret',
-  },
-  publicRuntimeConfig: {
-    // Will be available on both server and client
-    staticFolder: '/static',
-  },
+  // Disable server-side features for static export
+  distDir: 'out',
 };
 
 module.exports = nextConfig;

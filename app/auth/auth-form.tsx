@@ -6,7 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { toast } from 'sonner';
-import { supabase } from '@/lib/supabase/client';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -43,27 +42,8 @@ export default function AuthForm({ mode }: AuthFormProps) {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     try {
-      if (mode === 'register') {
-        const { error } = await supabase.auth.signUp({
-          email: values.email,
-          password: values.password,
-          options: {
-            emailRedirectTo: `${window.location.origin}/auth/callback`,
-          },
-        });
-        if (error) throw error;
-        toast.success('Account created successfully! Please sign in.');
-        router.push('/sign-in');
-      } else {
-        const { error } = await supabase.auth.signInWithPassword({
-          email: values.email,
-          password: values.password,
-        });
-        if (error) throw error;
-        toast.success('Signed in successfully!');
-        router.push('/');
-        router.refresh();
-      }
+      // Authentication disabled for static export
+      toast.error('Authentication is not available in static export mode');
     } catch (error: any) {
       toast.error(error.message);
     } finally {
@@ -109,6 +89,9 @@ export default function AuthForm({ mode }: AuthFormProps) {
             'Register'
           )}
         </Button>
+        <div className="text-center text-sm text-muted-foreground">
+          Authentication is disabled in static export mode
+        </div>
       </form>
     </Form>
   );

@@ -4,26 +4,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { supabase } from '@/lib/supabase/client';
-import type { User } from '@supabase/supabase-js';
 
 export default function Header() {
-  const [user, setUser] = useState<User | null>(null);
-
-  useEffect(() => {
-    const getUser = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      setUser(session?.user ?? null);
-    };
-
-    getUser();
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
+  // Disable authentication for static export
+  const [user, setUser] = useState(null);
 
   return (
     <header className="border-b bg-background">
@@ -53,22 +37,12 @@ export default function Header() {
               Store
             </Link>
             <div className="flex items-center gap-2">
-              {user ? (
-                <form action="/auth/sign-out" method="post">
-                  <Button variant="ghost" type="submit">
-                    Sign Out
-                  </Button>
-                </form>
-              ) : (
-                <>
-                  <Button variant="ghost" asChild>
-                    <Link href="/sign-in">Sign In</Link>
-                  </Button>
-                  <Button asChild>
-                    <Link href="/register">Register</Link>
-                  </Button>
-                </>
-              )}
+              <Button variant="ghost" asChild>
+                <Link href="/sign-in">Sign In</Link>
+              </Button>
+              <Button asChild>
+                <Link href="/register">Register</Link>
+              </Button>
             </div>
           </nav>
         </div>

@@ -2,8 +2,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, CalendarIcon, ThumbsUp, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { supabase } from '@/lib/supabase/client';
-import type { BlogPost } from '@/lib/supabase/types';
 
 interface BlogPostParams {
   params: {
@@ -466,26 +464,7 @@ export async function generateMetadata({ params }: BlogPostParams): Promise<Meta
   };
 }
 
-async function incrementViews(slug: string) {
-  try {
-    const { data: post } = await supabase
-      .from('blog_posts')
-      .select('id')
-      .eq('slug', slug)
-      .single();
-
-    if (post) {
-      await supabase.from('post_engagements').insert({
-        post_id: post.id,
-        type: 'view'
-      });
-    }
-  } catch (error) {
-    console.error('Error incrementing views:', error);
-  }
-}
-
-export default async function BlogPost({ params }: BlogPostParams) {
+export default function BlogPost({ params }: BlogPostParams) {
   const post = posts[params.slug];
 
   if (!post) {
@@ -503,9 +482,6 @@ export default async function BlogPost({ params }: BlogPostParams) {
       </main>
     );
   }
-
-  // Increment view count
-  await incrementViews(params.slug);
 
   return (
     <main className="min-h-screen bg-background py-20">
