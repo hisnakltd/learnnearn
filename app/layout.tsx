@@ -60,6 +60,17 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes spin {
+              to { transform: rotate(360deg); }
+            }
+            
+            .app-loaded #loading-fallback {
+              display: none;
+            }
+          `
+        }} />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -141,16 +152,6 @@ export default function RootLayout({
             <Footer />
           </div>
         </Providers>
-
-        <style jsx global>{`
-          @keyframes spin {
-            to { transform: rotate(360deg); }
-          }
-          
-          .app-loaded #loading-fallback {
-            display: none;
-          }
-        `}</style>
       </body>
     </html>
   );
