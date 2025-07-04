@@ -11,8 +11,14 @@ interface BlogPostParams {
   };
 }
 
+interface PostData {
+  title: string;
+  date: string;
+  content: string;
+}
+
 // This would typically come from a database or CMS
-const posts = {
+const posts: Record<string, PostData> = {
   'what-is-passive-income': {
     title: "What is Passive Income? A Beginner's Guide to Earning Money While You Sleep",
     date: "2024-03-20",
